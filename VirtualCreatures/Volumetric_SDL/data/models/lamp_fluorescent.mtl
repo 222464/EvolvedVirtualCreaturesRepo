@@ -1,0 +1,14 @@
+# Blender MTL File: 'lamp_fluorescent.blend'
+# Material Count: 1
+newmtl Material_lamp_fluorescent_texture.png
+Ns 10.0
+Ka 1.0 1.0 1.0
+Kd 0.640000 0.640000 0.640000
+Ks 0.0 0.0 0.0
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/lamp_fluorescent_texture.png
+map_Ka data/models/lamp_fluorescent_texture_emissive.png
+
+

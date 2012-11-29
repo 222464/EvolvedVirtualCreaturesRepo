@@ -1,0 +1,25 @@
+# Blender MTL File: 'ac10.blend'
+# Material Count: 2
+
+newmtl Rifle_A-104_Rifle_diffuse.j
+Ns 274.509804
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.706460 0.706460 0.706460
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/weapons/A-104_Rifle_diffuse.png
+map_Bump data/weapons/A-104_Rifle_normal.bmp
+map_Ks data/weapons/A-104_Rifle_Specular.png
+
+newmtl _ac10Wires_Texture.png
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd data/weapons/ac10Wires_Texture.png
+
+

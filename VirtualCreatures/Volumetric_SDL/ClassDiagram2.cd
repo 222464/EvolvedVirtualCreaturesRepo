@@ -1,0 +1,1180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IgnoreBodyAndGhostCast" Collapsed="true">
+    <Position X="7.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAEAAAAQAAIAA=</HashCode>
+      <FileName>Source\SceneObjects\Physics\DynamicCharacterController.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CreatureEvolver" Collapsed="true">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FiFARnIgIEAqDCsbBCAjPwwAhUCkpESAKowNOKGIxBM=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\CreatureEvolver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Neuron_Sensor" Collapsed="true">
+    <Position X="52.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAADAAEAAAAAAAIAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Neuron_Sensor_Feeler" Collapsed="true">
+    <Position X="11" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor_Feeler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Creature" Collapsed="true">
+    <Position X="19" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAQCEAAEEAAAAAgIAABAAAAUAAAjIAAAgAAAA=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\SceneObject_Creature.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asset" Collapsed="true">
+    <Position X="26.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Source\AssetManager\Asset.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AssetManager" Collapsed="true">
+    <Position X="57" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAEAAAAAgAAAAAAAAAAAAMYAAAAIAgAAAAA=</HashCode>
+      <FileName>Source\AssetManager\AssetManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asset_Texture" Collapsed="true">
+    <Position X="27.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAEAAAAARAAAAAgBAAAQAAACAEAAEAEAAAAA=</HashCode>
+      <FileName>Source\AssetManager\Asset_Texture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AABB" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAEEAAAEAABQAAMAAIQBgIAJQAoAQAQAAAAAEhQAOA=</HashCode>
+      <FileName>Source\Constructs\AABB.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AABB2D" Collapsed="true">
+    <Position X="2.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAUAAAAEAABQEAMAAIQBgIAIAAIAQAQAAAAAAhQAOA=</HashCode>
+      <FileName>Source\Constructs\AABB2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Color3f" Collapsed="true">
+    <Position X="9.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAQAAAAAAAAAAAAAAAAAAIAQABAAAAAAA=</HashCode>
+      <FileName>Source\Constructs\Color3f.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Color4f" Collapsed="true">
+    <Position X="11" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAQAAAAAAAAAAAAAAAAAAoAQABAAAAAAA=</HashCode>
+      <FileName>Source\Constructs\Color4f.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Matrix3x3f" Collapsed="true">
+    <Position X="4" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABBAAAABgBAAAIAIQAAAAEAACAAAACgQggEAAI=</HashCode>
+      <FileName>Source\Constructs\Matrix3x3f.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Matrix4x4d" Collapsed="true">
+    <Position X="5.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAIFAAAAABABAAAAAIQABAAEACIAAACAgAggEAAI=</HashCode>
+      <FileName>Source\Constructs\Matrix4x4d.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Matrix4x4f" Collapsed="true">
+    <Position X="7.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAEIFAAAAARgRAAAIAsUABAAEACIAAIICgQggFAAI=</HashCode>
+      <FileName>Source\Constructs\Matrix4x4f.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Planef" Collapsed="true">
+    <Position X="9.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAACAAAAAAAEAAAEAAAQAAAIAAEAAAAA=</HashCode>
+      <FileName>Source\Constructs\Planef.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Plane_Equationf" Collapsed="true">
+    <Position X="7.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAIAAAACAAAAAAAAAAAEAAACkAQAAAABgAAA=</HashCode>
+      <FileName>Source\Constructs\Plane_Equationf.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Point2i" Collapsed="true">
+    <Position X="11" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Source\Constructs\Point2i.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Point3i" Collapsed="true">
+    <Position X="16.5" Y="19.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAABgAQAAAAA=</HashCode>
+      <FileName>Source\Constructs\Point3i.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Point4i" Collapsed="true">
+    <Position X="12.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAhgAQAAAAA=</HashCode>
+      <FileName>Source\Constructs\Point4i.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quaternion" Collapsed="true">
+    <Position X="4" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABIIAgAABAACkAMACQCAGAAQAgAAgAhgASEQAAA=</HashCode>
+      <FileName>Source\Constructs\Quaternion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vec2f" Collapsed="true">
+    <Position X="7.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAEAAACQAACAAAAgAAAABgACEAAAA=</HashCode>
+      <FileName>Source\Constructs\Vec2f.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vec3f" Collapsed="true">
+    <Position X="9.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAEAAACQAACAAAAgAAAADgASEAAAA=</HashCode>
+      <FileName>Source\Constructs\Vec3f.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vec4d" Collapsed="true">
+    <Position X="11" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAQAACAAAAgAAAAhgASEAAAA=</HashCode>
+      <FileName>Source\Constructs\Vec4d.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vec4f" Collapsed="true">
+    <Position X="12.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAEAAAAQAACAAAAgAAAAhgASEAAAA=</HashCode>
+      <FileName>Source\Constructs\Vec4f.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FrameTimer" Collapsed="true">
+    <Position X="2.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAgAAgAAAEAEAEAAAAAAAAAAAAAEAAAgBAAIAAAg=</HashCode>
+      <FileName>Source\Misc\FrameTimer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputHandler" Collapsed="true">
+    <Position X="18.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAAAAAIIBEACAAEAAABEABAApAAIAAAQAAAANFBAUI=</HashCode>
+      <FileName>Source\Misc\InputHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HashedNodeStatusPoint3i" Collapsed="true">
+    <Position X="16.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\PathFinding\AStar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MinHeap_LowMemoryNode" Collapsed="true">
+    <Position X="50.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAIACAAgAAACAAAACAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Source\PathFinding\AStar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MinHeap&lt;T&gt;" Collapsed="true">
+    <Position X="9.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAIACAAgAAACAAAACAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Source\PathFinding\MinHeap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NoiseGenerator" Collapsed="true">
+    <Position X="12.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAABBAAAAACAIAACAAAEAAAgAABAgAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Source\Perlin\NoiseGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FBO" Collapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAIgAAAAAAAAAARAAggAAFIAABAAESECAIGAEAQAQQ=</HashCode>
+      <FileName>Source\Renderer\BufferObjects\FBO.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VAO" Collapsed="true">
+    <Position X="4" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAggAAAAAAAAgAAAAAgAAAAABAAEQAAAAEAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\BufferObjects\VAO.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VBO" Collapsed="true">
+    <Position X="5.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAgAIAAAgAAAAABAAEQAAAAEAAAEAAA=</HashCode>
+      <FileName>Source\Renderer\BufferObjects\VBO.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera" Collapsed="true">
+    <Position X="5.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAABAAAAAAACAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Source\Renderer\Camera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Frustum" Collapsed="true">
+    <Position X="4" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAACACAAAAAAQAAAAA=</HashCode>
+      <FileName>Source\Renderer\Culler\Frustum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GBuffer" Collapsed="true">
+    <Position X="5.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAjAAgCAIAAAARAQlACAFIBABAEEyEqgIFAEBAAQA=</HashCode>
+      <FileName>Source\Renderer\GBuffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Animation_MD5" Collapsed="true">
+    <Position X="18.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAgAgBABCIAAAAQEEEAoFAIASEAAQAEAAAEAAAEgI=</HashCode>
+      <FileName>Source\Renderer\Animation_MD5\Animation_MD5.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Material" Collapsed="true">
+    <Position X="2.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQCAAAAAAAAZAAAAAAAAAACgAAAAAAAAAAEQABAAAA=</HashCode>
+      <FileName>Source\Renderer\Material.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model_MD5" Collapsed="true">
+    <Position X="36.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>J4QIAEgIBgCDBAKCbAQABIAAAQQAASgAEBEhAARABAo=</HashCode>
+      <FileName>Source\Renderer\Model_MD5\Model_MD5.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model_MD5_BatchRenderer" Collapsed="true">
+    <Position X="17" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIBoEAMgIAA4QwSAAUAIAQzAEAABkRECgAMIAFoAQA=</HashCode>
+      <FileName>Source\Renderer\Model_MD5\Model_MD5.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model_OBJ" Collapsed="true">
+    <Position X="21" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JABAgEkQAAOCAAKiQgAABECAgIQCAQAAEFjAEMAAEAA=</HashCode>
+      <FileName>Source\Renderer\Model_OBJ.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model_OBJ_BatchRenderer" Collapsed="true">
+    <Position X="21.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAQAABACAAAABAAAAAAAAgAAAABAAAA=</HashCode>
+      <FileName>Source\Renderer\Model_OBJ.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model_OBJ_Physics_Static" Collapsed="true">
+    <Position X="21" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAEAAQAAAAAAQAAAAAFAAAAAABQAA=</HashCode>
+      <FileName>Source\Renderer\Model_OBJ_Physics_Static.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model_OBJ_VertexOnly" Collapsed="true">
+    <Position X="23.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAkABAEAAAACQgAQAAAIAIQACAAAEBAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Model_OBJ_VertexOnly.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Octree" Collapsed="true">
+    <Position X="25.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>lAIQABAAAAABAIAAAAAAAAAIAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Octree\Octree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OctreeNode" Collapsed="true">
+    <Position X="4" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Q4YIACoAgAAACCAEAIIABAAgAAIAQUIQAAAAgQgAAA4=</HashCode>
+      <FileName>Source\Renderer\Octree\OctreeNode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OctreeOccupant" Collapsed="true">
+    <Position X="24.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQgAAAAAgABAAAACQAAAAgAkAAAA=</HashCode>
+      <FileName>Source\Renderer\Octree\OctreeOccupant.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Octree_CHC" Collapsed="true">
+    <Position X="0.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SgAAAACAACQAAAEAEABAAAAkQAAYAUQABAAAgIAAAQI=</HashCode>
+      <FileName>Source\Renderer\Octree\Octree_CHC.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Octree_CHCPP" Collapsed="true">
+    <Position X="2.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>WgAAAAGAADQAAAFAEAAAAAAkQAAIIUUGDBAAgIAAAQY=</HashCode>
+      <FileName>Source\Renderer\Octree\Octree_CHCPP.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareOcclusionCuller" Collapsed="true">
+    <Position X="11" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACAAAAAQAAAAAAAAAAAQBAACAAAAEAAAIAAAQAAAQA=</HashCode>
+      <FileName>Source\Renderer\Octree\SoftwareOcclusionCuller.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaticOctree" Collapsed="true">
+    <Position X="25.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAABIAQA=</HashCode>
+      <FileName>Source\Renderer\Octree\StaticOctree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quadtree" Collapsed="true">
+    <Position X="22.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAIQAAAAAAABAAAAQAAAAAAIAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Source\Renderer\Quadtree\Quadtree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuadtreeNode" Collapsed="true">
+    <Position X="0.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQYIACoAgAAACCAEAIIIBAAgAAIAQUIAAAAACQgAAA4=</HashCode>
+      <FileName>Source\Renderer\Quadtree\QuadtreeNode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuadtreeOccupant" Collapsed="true">
+    <Position X="2.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAACAAAAAAAAAAEgABAARACAAAAAAAAAAAI=</HashCode>
+      <FileName>Source\Renderer\Quadtree\QuadtreeOccupant.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaticQuadtree" Collapsed="true">
+    <Position X="22.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAEAAAAAAAAAAAAAAAAAEAABAAAAABAAQA=</HashCode>
+      <FileName>Source\Renderer\Quadtree\StaticQuadtree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shader" Collapsed="true">
+    <Position X="32.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAxgILACBCAUCAgUEICAQAAABQAAAEAFQAEQAQAAQk=</HashCode>
+      <FileName>Source\Renderer\Shader\Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UBOShaderInterface" Collapsed="true">
+    <Position X="2.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAIAAgAACCAACAEAEIAAAAAAAEAIACBCAAAQCAA=</HashCode>
+      <FileName>Source\Renderer\Shader\UBOShaderInterface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShadowCubeMap" Collapsed="true">
+    <Position X="9.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQEAAAgCQBAAAAAAAABREEEAAABoAAIAAAQI=</HashCode>
+      <FileName>Source\Renderer\ShadowMap\ShadowCubeMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprite" Collapsed="true">
+    <Position X="0.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARIAMAAAAAIAACAACAAIAAAGBAICAFAQABAAIABAAAA=</HashCode>
+      <FileName>Source\Renderer\Sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Window" Collapsed="true">
+    <Position X="9.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAQIIgBAAgAAAAAQABAEAEAAEBCAAAAQg=</HashCode>
+      <FileName>Source\Renderer\Window.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Light" Collapsed="true">
+    <Position X="1.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAgAAAAABQAFABAAAAAQAAIA=</HashCode>
+      <FileName>Source\SceneEffects\Light.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Light_Directional" Collapsed="true">
+    <Position X="9.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAIAAAAAAAAAAKAIAAABgBAiAAAgAAQA=</HashCode>
+      <FileName>Source\SceneEffects\Light_Directional.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Light_Directional_Shadowed" Collapsed="true">
+    <Position X="11" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAABQAIAIAAAAAAAEAAIAIAEABABAiAAAgAAQA=</HashCode>
+      <FileName>Source\SceneEffects\Light_Directional_Shadowed.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Light_Point" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAQAAQIAAAAAAAAIAYAAAQAEIBAgIAAwAIYA=</HashCode>
+      <FileName>Source\SceneEffects\Light_Point.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Light_Point_Shadowed" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Source\SceneEffects\Light_Point_Shadowed.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Light_Spot" Collapsed="true">
+    <Position X="2.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAKARAIQIAEAAAAAAIAYAIAQAEBDkyIAAwAIYA=</HashCode>
+      <FileName>Source\SceneEffects\Light_Spot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Light_Spot_Shadowed" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABAAAAAhAAAAEAAAAAAAUAAAAAAAAEABAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneEffects\Light_Spot_Shadowed.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEffect_EdgeBlurAA" Collapsed="true">
+    <Position X="41.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAABAIAAAAAAQAAAAAAEQAAAAAAAAAAQA=</HashCode>
+      <FileName>Source\SceneEffects\SceneEffect_EdgeBlurAA.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEffect_EmissiveRender" Collapsed="true">
+    <Position X="43.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAQAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneEffects\SceneEffect_EmissiveRender.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEffect_GodRay" Collapsed="true">
+    <Position X="45.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAABgAAAAAAAAAAAAAEYAAAAAAAAAAQA=</HashCode>
+      <FileName>Source\SceneEffects\SceneEffect_GodRay.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEffect_HDRR" Collapsed="true">
+    <Position X="48" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAhAAAGAAAAAAAAgAAAQAAAEAAAAQAQAAQAAA=</HashCode>
+      <FileName>Source\SceneEffects\SceneEffect_HDRR.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEffect_Lighting" Collapsed="true">
+    <Position X="27.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAgAACANCyAAABAAkggEAIACoCSEMApgAAAAABECUE=</HashCode>
+      <FileName>Source\SceneEffects\SceneEffect_Lighting.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_SkyBox" Collapsed="true">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAACAAAIAAAIEAAAAAAAAAAAAEAIABAAABAQAAA=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_SkyBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEffect_SSAO" Collapsed="true">
+    <Position X="30" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAIBAAAAAAAAAAQEAAAAAAEAGQAAAAAAAAAAQA=</HashCode>
+      <FileName>Source\SceneEffects\SceneEffect_SSAO.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEffect_WaterRender" Collapsed="true">
+    <Position X="34.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QcAQACAAAAAAAgAAAEAAAAAAAAAAAEBMAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneEffects\Water\SceneEffect_WaterRender.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEffect_TransparencyRender" Collapsed="true">
+    <Position X="36.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAAAAABBCggAAAAAAAAAAAAAEBAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneEffects\Transparency\SceneEffect_TransparencyRender.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransparentRenderable" Collapsed="true">
+    <Position X="21.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAACAAQAIAAAAAAAAAACBIAAAAAAAA=</HashCode>
+      <FileName>Source\SceneEffects\Transparency\TransparentRenderable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestGrouping" Collapsed="true">
+    <Position X="19.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Source\SceneEffects\Water\TestGrouping.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WaterGeomGrouping" Collapsed="true">
+    <Position X="19.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAACAAgAAAAAAAAAAAAAACAAgAAAAAAA=</HashCode>
+      <FileName>Source\SceneEffects\Water\WaterGeomGrouping.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Enemy" Collapsed="true">
+    <Position X="34.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAQAAAAAAAAAEAAAAAAggBAA=</HashCode>
+      <FileName>Source\SceneObjects\Enemies\SceneObject_Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_EnemySelector" Collapsed="true">
+    <Position X="52.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAAAAAgABAIAAAAAAAAAAAAAQAAQAIAAAAAAA=</HashCode>
+      <FileName>Source\SceneObjects\Enemies\SceneObject_EnemySelector.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Enemy_Flea" Collapsed="true">
+    <Position X="37" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEAACAAAAAAAAAAAAAAAIAAAEAAEAAAADAAAAAAAAI=</HashCode>
+      <FileName>Source\SceneObjects\Enemies\SceneObject_Enemy_Flea.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Enemy_Spawner" Collapsed="true">
+    <Position X="32.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAAAQCAgAEAADAAAAIAAAAAAAABAADkAAAAAACA=</HashCode>
+      <FileName>Source\SceneObjects\Enemies\SceneObject_Enemy_Spawner.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Enemy_Swarmer" Collapsed="true">
+    <Position X="34.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIkAAAQAQCAlAEAgDAAAQIAEAAICAAAQADAAAQECBCA=</HashCode>
+      <FileName>Source\SceneObjects\Enemies\SceneObject_Enemy_Swarmer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_ParticleEmitter_Sprite" Collapsed="true">
+    <Position X="11.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAggAgCQAAACAEAAAAAAgEAAAEAAIBLAAAAjgCAA=</HashCode>
+      <FileName>Source\SceneObjects\Particles\SceneObject_ParticleEmitter_Sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Particle_Sprite" Collapsed="true">
+    <Position X="5.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAIACCAAAAAAAAAAAAAIAQACDFBAQgAAAA=</HashCode>
+      <FileName>Source\SceneObjects\Particles\Particle_Sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_ParticleEmitter_Sprite_Point" Collapsed="true">
+    <Position X="10" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAACAAAAAAAAEAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Source\SceneObjects\Particles\SceneObject_ParticleEmitter_Sprite_Point.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_ParticleEmitter_Sprite_Pyramid" Collapsed="true">
+    <Position X="12.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAEAAIEAAAAAAAAAAMAAAA=</HashCode>
+      <FileName>Source\SceneObjects\Particles\SceneObject_ParticleEmitter_Sprite_Pyramid.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DynamicCharacterController" Collapsed="true">
+    <Position X="12.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQMAQQgAiAgEWCABBAAAQBAAQAAKFAgAQEAAAEAICE=</HashCode>
+      <FileName>Source\SceneObjects\Physics\DynamicCharacterController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DynamicConcaveShape" Collapsed="true">
+    <Position X="25.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAQAQAAAFAEAgAICAAA=</HashCode>
+      <FileName>Source\SceneObjects\Physics\DynamicConcaveShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_PhysicsBox" Collapsed="true">
+    <Position X="39.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAgAEAADAAAAIAAAAAAAAgAgDAAAAAAASA=</HashCode>
+      <FileName>Source\SceneObjects\Physics\SceneObject_PhysicsBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_PhysicsWorld" Collapsed="true">
+    <Position X="43.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAEAAAAAAAAgIAAAAIAAEAACACAAAAAEA=</HashCode>
+      <FileName>Source\SceneObjects\Physics\SceneObject_PhysicsWorld.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Prop_Physics_Dynamic" Collapsed="true">
+    <Position X="48.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAAIQCCgQEAADQBAAAAAAAAAAk0AADAAAAAAAQA=</HashCode>
+      <FileName>Source\SceneObjects\Physics\SceneObject_Prop_Physics_Dynamic.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Prop_Physics_Static" Collapsed="true">
+    <Position X="55" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAQAAAQCCgAEAADAAABAAAAAAAAk0AABAAAAAAAQA=</HashCode>
+      <FileName>Source\SceneObjects\Physics\SceneObject_Prop_Physics_Static.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Decal" Collapsed="true">
+    <Position X="59.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAMAAAITAAAQAEAAQAIAAAAABgAAEAAADBBIAAAAUA=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_Decal.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Decal_BatchRenderer" Collapsed="true">
+    <Position X="19.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAQAQAAAAQAAAAQAAAABAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_Decal.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Door" Collapsed="true">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIAAoAgAQAAREAAAAAAgAAAQAAAAAEQAADCAABAAESg=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_Door.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEffect_HUD" Collapsed="true">
+    <Position X="32.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAAAAAQAAAAAAAIAAAAAIAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneEffects\SceneEffect_HUD.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_LevelGoal" Collapsed="true">
+    <Position X="5.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_LevelGoal.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Player" Collapsed="true">
+    <Position X="23.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAQAYAOICggMFgxogMABJEUQAAUCCHAALQAIQkgYAI=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Prop" Collapsed="true">
+    <Position X="28" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACCAACAACAAAEAAAAAAAAk0AIDAAAgEAAQA=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_Prop.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Prop_Transparent" Collapsed="true">
+    <Position X="21.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAQAAACCAACAACAAAAAAAAAAAAk0AICACAgEAAQA=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_Prop_Transparent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Sound" Collapsed="true">
+    <Position X="41.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgIAAAABAAAAAAEQAACAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_Sound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_SpiralStairs" Collapsed="true">
+    <Position X="46" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAAAQAAgAEADBAAAAAAAAABAYEQAABAAAAAQgQI=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_SpiralStairs.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Water" Collapsed="true">
+    <Position X="50.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAEAAAQQgQAAAAAAAEAGIgBMQFgAADAAEAAAEAA=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_Water.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Limb" Collapsed="true">
+    <Position X="61.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YBABAFAAAAqgBCABPAAAAqwoAoAAQkMoARABAIQACCA=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\Limb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Neuron" Collapsed="true">
+    <Position X="55.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAEESBAAACKAAAAAICACgAEAAAIQAAAgKAAQAAQ=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NeuronInput" Collapsed="true">
+    <Position X="52.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAAAAEAAAAAAAAEAAAAAAAAAACAAA=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\NeuronInput.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Neuron_Sensor_Contact" Collapsed="true">
+    <Position X="35.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAABAAAAAAAAAAAAAAAAAgAAgAAEAAAAAAAAAAIAA=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor_Contact.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Neuron_Sensor_Timer" Collapsed="true">
+    <Position X="52.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAQAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor_Timer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_VirtualCreatureSimulator" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAQAiIAAABJAAAAAAAkQEACAQAAgAAAA=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\SceneObject_VirtualCreatureSimulator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Shell" Collapsed="true">
+    <Position X="25.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACMAAAACAAAIAAAABIAAAAEAAAQAQACDBAAAAABAA=</HashCode>
+      <FileName>Source\SceneObjects\Weapons\SceneObject_Shell.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject_Weapon" Collapsed="true">
+    <Position X="30.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACAAgCAAAAAAAAAAAAAAAAAAABAAAAEAAAA=</HashCode>
+      <FileName>Source\SceneObjects\Weapons\SceneObject_Weapon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Weapon" Collapsed="true">
+    <Position X="2.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAEQKAEAAPAABECAWRBQAAAAAAAEAAwgAFAIAEEgAQA=</HashCode>
+      <FileName>Source\SceneObjects\Weapons\Weapon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponAssetPack" Collapsed="true">
+    <Position X="30" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAABgAAAAAIAAABAAAAIAAAIQREAAhEAAAAAgEACA=</HashCode>
+      <FileName>Source\SceneObjects\Weapons\WeaponAssetPack.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponFactory" Collapsed="true">
+    <Position X="4" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAiAAAhAgEEgIAAEAaAQAWIoAAIEIAAAQAAEAECAE=</HashCode>
+      <FileName>Source\SceneObjects\Weapons\WeaponFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponOutput" Collapsed="true">
+    <Position X="5.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneObjects\Weapons\WeaponOutput.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponOutput_Ballistic" Collapsed="true">
+    <Position X="7.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneObjects\Weapons\WeaponOutput_Ballistic.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wire" Collapsed="true">
+    <Position X="11" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAIAgAAAAAEAAAAAgAAwAABAIAEAAAQA=</HashCode>
+      <FileName>Source\SceneObjects\Weapons\Wire.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BatchRenderable" Collapsed="true">
+    <Position X="4" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Scene\BatchRenderable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BatchRenderer" Collapsed="true">
+    <Position X="20.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAASAAAAAAAAAAAAAAAAACAAAAABAQAA=</HashCode>
+      <FileName>Source\Scene\BatchRenderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scene" Collapsed="true">
+    <Position X="25.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JuIF4dElAEKJ9epWgRUCwoSj0ngIrk4lmDxMUENGAWU=</HashCode>
+      <FileName>Source\Scene\Scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEffect" Collapsed="true">
+    <Position X="37.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBAAAAEAAAACACAAAAABIAAAAAAAAIACAAAAAAABAE=</HashCode>
+      <FileName>Source\Scene\SceneEffect.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObject" Collapsed="true">
+    <Position X="32.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAACUCAgAACAIAAAABAAQAAGDAAAhAAAAE=</HashCode>
+      <FileName>Source\Scene\SceneObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObjectReferenceTracker" Collapsed="true">
+    <Position X="7.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAABABAAIAAAgAQAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Source\Scene\SceneObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sound" Collapsed="true">
+    <Position X="15.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAABAAgAAAAAAAAAA=</HashCode>
+      <FileName>Source\Sound\Sound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundSource" Collapsed="true">
+    <Position X="12.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAhCABkgCgABEFCAIFAAAAIAJAATkQAsAQAAQAIABA=</HashCode>
+      <FileName>Source\Sound\SoundSource.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundSystem" Collapsed="true">
+    <Position X="39" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYIACAAAACAAAAAAAAAQBAAAAAAAAlAAgAAAAAAAAQA=</HashCode>
+      <FileName>Source\Sound\SoundSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sound_Effect" Collapsed="true">
+    <Position X="26.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAgAAAAAAAAAAAAAAAQAIBIAkAAAAAAAAAA=</HashCode>
+      <FileName>Source\Sound\Sound_Effect.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sound_Streamed" Collapsed="true">
+    <Position X="17.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ZgQAAAQAAAAAABAAAEIQAAAoAhAIABAAgAQAIAAIMDA=</HashCode>
+      <FileName>Source\Sound\Sound_Streamed.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSDLThread" Collapsed="true">
+    <Position X="59.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAwAAGgBAACAAAAAAAAAAAQAAAAAAgAAAAAAAAI=</HashCode>
+      <FileName>Source\System\CSDLThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSDLTaskThread" Collapsed="true">
+    <Position X="59.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAgAgAAAAAAAAAgAAAAAAAAAAAAgAAAAAIAAAI=</HashCode>
+      <FileName>Source\System\CSDLThreadPool.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSDLThreadPool" Collapsed="true">
+    <Position X="21" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAAACABAAAAAAgCgAAAAAAAAAGAAAAAAAAAQEAAAAA=</HashCode>
+      <FileName>Source\System\CSDLThreadPool.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uncopyable" Collapsed="true">
+    <Position X="35.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAgAAAAEAA=</HashCode>
+      <FileName>Source\System\Uncopyable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chunk" Collapsed="true">
+    <Position X="7.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABQgEkAABAgAwAABjENAEAABAAgEVEQggwAAAABEUE=</HashCode>
+      <FileName>Source\World\Chunk.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chunk_Renderer" Collapsed="true">
+    <Position X="16.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Source\World\Chunk.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chunk_BatchRenderer" Collapsed="true">
+    <Position X="23.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAQRAAAAAAAAAAAAAAAAEAAAAAABCAAA=</HashCode>
+      <FileName>Source\World\Chunk.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LuaVirtualMachine" Collapsed="true">
+    <Position X="12.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAACASAAAAAAAAAAAAAAIABgAAAAQACAAAAAAA=</HashCode>
+      <FileName>Source\World\LuaWorldInterface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapCollider" Collapsed="true">
+    <Position X="0.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAAQQAEAAAAAgAAAAwAAAAAQAAACAACgAI=</HashCode>
+      <FileName>Source\World\Physics\MapCollider.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PathFindingTask" Collapsed="true">
+    <Position X="16.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAQIAAIAAAAAAQAAAAAAQAAAAAAAAAAI=</HashCode>
+      <FileName>Source\World\World.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VoxelFaceDesc" Collapsed="true">
+    <Position X="0.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAQAAAEQAAAAQAAAAgAI=</HashCode>
+      <FileName>Source\World\World.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="World" Collapsed="true">
+    <Position X="57.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAQQAAAChEUEEAikEAARNABCIAiImAMAAgAKMEQASY=</HashCode>
+      <FileName>Source\World\World.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="CreatureGenes" Collapsed="true">
+    <Position X="5.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAACAgAAAAACA=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\SceneObject_Creature.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Node_LowMemory" Collapsed="true">
+    <Position X="5.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAABAACAAAAAAAAAAAQAAAAAAAAAQAAAgAQAAAAA=</HashCode>
+      <FileName>Source\PathFinding\AStar.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FrameData" Collapsed="true">
+    <Position X="9.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAIAAAAA=</HashCode>
+      <FileName>Source\Renderer\Animation_MD5\FrameData.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="SkeletalJoint" Collapsed="true">
+    <Position X="11" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAQAABAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Source\Renderer\Animation_MD5\SkeletalJoint.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BaseFrame" Collapsed="true">
+    <Position X="0.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAACBAA=</HashCode>
+      <FileName>Source\Renderer\Animation_MD5\BaseFrame.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Joint" Collapsed="true">
+    <Position X="12.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAIAAAAAQAAAAAgAAAAAAAAACAAA=</HashCode>
+      <FileName>Source\Renderer\Model_MD5\Joint.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="JointDesc" Collapsed="true">
+    <Position X="0.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAEAAAAAAAIAAgAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Source\Renderer\Animation_MD5\JointDesc.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BoneWeightSet" Collapsed="true">
+    <Position X="4" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Model_MD5\Mesh.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BoneIndexSet" Collapsed="true">
+    <Position X="2.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Model_MD5\Mesh.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Mesh" Collapsed="true">
+    <Position X="4" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAEQBBAAAEAhEAAQAEACAAAAAAAAAQAAAECAAAA=</HashCode>
+      <FileName>Source\Renderer\Model_MD5\Mesh.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Vertex" Collapsed="true">
+    <Position X="2.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAQAIAQAAAAAAAAAAAAQEAAAAA=</HashCode>
+      <FileName>Source\Renderer\Model_MD5\Vertex.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Weight" Collapsed="true">
+    <Position X="4" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAARICAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Model_MD5\Weight.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="IndexSet" Collapsed="true">
+    <Position X="11" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAoAAAEAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Model_OBJ.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Occlusion_Renderer" Collapsed="true">
+    <Position X="7.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAQAIAABAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Octree\Occlusion_Renderer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Occluder" Collapsed="true">
+    <Position X="22.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Source\Renderer\Octree\SoftwareOcclusionCuller.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TextureAndAttachment" Collapsed="true">
+    <Position X="0.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Shader\TextureAndAttachment.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="EnemyDesc" Collapsed="true">
+    <Position X="7.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAACAAAAICEAAAAAAAAABQACAA=</HashCode>
+      <FileName>Source\SceneObjects\Enemies\SceneObject_EnemySelector.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="SpriteEmissiveRenderable" Collapsed="true">
+    <Position X="12.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAIAAAgAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneObjects\SceneObject_Player.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LimbGenes" Collapsed="true">
+    <Position X="2.25" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQgAQCAACIEAEABACAJAAAICDAQAAIoAAAABAA=</HashCode>
+      <FileName>Source\SceneObjects\VirtualCreatures\Limb.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Task" Collapsed="true">
+    <Position X="16.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEAAAAAAAAI=</HashCode>
+      <FileName>Source\System\CSDLThreadPool.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="SideTexCoords" Collapsed="true">
+    <Position X="9.25" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\World\World.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="FrameSkeleton" Collapsed="true">
+    <Position X="2.25" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Animation_MD5\Animation_MD5.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Triangle" Collapsed="true">
+    <Position X="5.75" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Model_MD5\Mesh.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Octree_RayCallBack" Collapsed="true">
+    <Position X="4" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Renderer\Octree\Octree.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="EnemyFactoryFunc" Collapsed="true">
+    <Position X="0.5" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\SceneObjects\Enemies\SceneObject_EnemySelector.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

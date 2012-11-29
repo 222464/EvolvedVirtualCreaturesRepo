@@ -1,0 +1,118 @@
+# Blender MTL File: 'dungeon entrance.blend'
+# Material Count: 10
+newmtl FrontColor
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.165000 0.165000 0.165000
+Ni 1.000000
+d 1.000000
+illum 2
+
+
+newmtl Metal_Seamed_Metal_Seamed.jpg
+Ns 3.921569
+Ka 0.000000 0.000000 0.000000
+Kd 0.226420 0.085983 0.145583
+Ks 0.002646 0.001995 0.000798
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/test/textures/Metal_Seamed.png
+
+
+newmtl Metal_Seamed_Metal_Steel_Textured.jpg
+Ns 3.921569
+Ka 0.000000 0.000000 0.000000
+Kd 0.226420 0.085983 0.145583
+Ks 0.002646 0.001995 0.000798
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/test/textures/Metal_Seamed.png
+
+
+newmtl Water_Stream
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.247843 0.247843 0.269804
+Ks 0.165000 0.165000 0.165000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/test/textures/Water_Stream.png
+map_Bump data/models/test/textures/Water_Stream_normal.bmp
+
+
+newmtl Water_Stream_Water_Stream.jpg
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.247843 0.247843 0.269804
+Ks 0.165000 0.165000 0.165000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/test/textures/Water_Stream.png
+map_Bump data/models/test/textures/Water_Stream_normal.bmp
+
+
+newmtl Wood_Pole_Utility
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.298039 0.232157 0.210196
+Ks 0.165000 0.165000 0.165000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/test/textures/Wood_Pole_Utility.png
+map_Bump data/models/test/textures/Wood_Pole_Utility_normal.bmp
+
+
+newmtl Wood_Pole_Utility_Wood_Pole_Utility.jpg
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.298039 0.232157 0.210196
+Ks 0.165000 0.165000 0.165000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/test/textures/Wood_Pole_Utility.png
+map_Bump data/models/test/textures/Wood_Pole_Utility_normal.bmp
+
+
+newmtl tx1_tx1.png
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.250980 0.235294 0.203922
+Ks 0.212239 0.151154 0.067806
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/test/textures/tx1.png
+map_Bump data/models/test/textures/tx1_normal.bmp
+
+
+newmtl tx1_tx2.png
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.250980 0.235294 0.203922
+Ks 0.212239 0.151154 0.067806
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/test/textures/tx2.png
+map_Bump data/models/test/textures/tx1_normal.bmp
+
+
+newmtl tx2_tx2.png
+Ns 9.803922
+Ka 0.000000 0.000000 0.000000
+Kd 0.326274 0.307451 0.203922
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd data/models/test/textures/tx2.png
+map_Bump data/models/test/textures/tx2_normal.bmp
+
+

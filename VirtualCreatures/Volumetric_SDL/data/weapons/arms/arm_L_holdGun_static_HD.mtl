@@ -1,0 +1,13 @@
+# Blender MTL File: 'arm_posed.blend'
+# Material Count: 1
+newmtl Material1
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.700000 0.700000 0.700000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/weapons/arms/arm_texture.png
+
+

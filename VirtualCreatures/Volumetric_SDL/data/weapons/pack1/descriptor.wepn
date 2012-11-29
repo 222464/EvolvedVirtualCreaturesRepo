@@ -1,0 +1,22 @@
+RandomTexture: "randomTextureHD_diffuse.png" "randomTextureHD_normal.bmp" "randomTextureHD_specular.png"
+
+NumBiases: 4
+
+Bias "ballistic" 256 256
+Bias "directedEnergy" 768 246
+Bias "biological" 768 768 
+Bias "worldAffector" 256 768 
+
+NumModels: 9
+
+Model "ballistic_barrels" "ballisticBarrel1.obj"
+Model "ballistic_barrels" "ballisticBarrel3.obj"
+Model "stocks" "stock1.obj"
+Model "stocks" "stock2.obj"
+Model "scopes" "holo1.obj"
+Model "scopes" "sniperScope1.obj"
+Model "scopes" "iron1.obj" dsfsdf
+Model "scopes" "ARScope1.obj"
+Model "triggers" "trigger1.obj"
+Model "decoration" "beacon1.obj"
+Model "decoration" "handle1.obj"

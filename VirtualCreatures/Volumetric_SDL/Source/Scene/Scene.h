@@ -1,0 +1,756 @@
+#pragma once
+
+#include <System/Uncopyable.h>
+
+#include <Renderer/Octree/StaticOctree.h>
+#include <Renderer/Octree/Octree_CHCPP.h>
+#include <Renderer/Camera.h>
+#include <Renderer/Shader/Shader.h>
+#include <Renderer/GBuffer.h>
+#include <Renderer/Model_OBJ_VertexOnly.h>
+#include <Renderer/Shader/UBOShaderInterface.h>
+
+#include <Scene/SceneObject.h>
+#include <Scene/SceneEffect.h>
+#include <Scene/BatchRenderer.h>
+#include <Scene/BatchRenderable.h>
+
+#include <Misc/InputHandler.h>
+#include <Misc/FrameTimer.h>
+
+#include <AssetManager/AssetManager.h>
+#include <AssetManager/Asset_Texture.h>
+
+#include <unordered_map>
+
+class Scene :
+	public Uncopyable
+{
+public:
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief different G Buffer render shader types
+	///
+	/// e_plain is used for rendering without bump maps, and
+	/// e_bump is used for rendering with bump maps
+	///
+	//////////////////////////////////////////////////////////////////////////
+	enum GBufferRenderShader
+	{
+		e_plain = 0, e_bump
+	};
+
+private:
+	// Layers store lists of objects
+	std::vector<std::list<SceneObject*>> m_objects;
+	std::unordered_map<std::string, SceneObject*> m_namedObjects;
+
+	std::vector<SceneEffect*> m_effects;
+	std::unordered_map<std::string, SceneEffect*> m_namedEffects;
+
+	bool m_created;
+	bool m_treeSetup;
+
+	Frustum m_frustum;
+
+	class Scene_Occlusion_Renderer :
+		public Occlusion_Renderer
+	{
+	private:
+		bool m_renderingAABBs;
+	public:
+		Scene* m_pScene;
+
+		Scene_Occlusion_Renderer();
+
+		void ResetForFrame();
+
+		// Inherited from Occlusion_Renderer
+		void DrawAABB(const AABB &aabb);
+		void Draw(OctreeOccupant* pOc);
+		void FinishDraw();
+	} m_scene_Occlusion_Renderer;
+
+	Octree_CHCPP m_occlusionCuller;
+
+	// So can use same interface for shader versions
+	Shader* m_pCurrentGBufferRenderShader;
+
+	GBufferRenderShader m_currentGBufferRenderShader;
+
+	static const unsigned int m_numGBufferRenderShaders = 2;
+
+	Shader* m_pGBufferRenderShaders[m_numGBufferRenderShaders];
+
+	Shader m_gBufferRender;
+	Shader m_gBufferRender_bump; // Bump mapping
+
+	Matrix4x4f m_viewMatrix;
+	Matrix4x4f m_inverseViewMatrix;
+	Matrix4x4f m_normalMatrix;
+
+	Asset_Texture m_whiteTexture;
+
+	Model_OBJ_VertexOnly m_normalizedCube;
+
+	bool m_usingDiffuseTexture;
+	bool m_usingSpecularTexture;
+	bool m_usingEmissiveTexture;
+
+	void (Scene::*m_pRenderFunc)();
+
+	// Use to completely deactivate materials when not running a frame (by assigning a function that does nothing)
+	void (Scene::*m_pSetDiffuseColorFunc)(const Color3f &color);
+	void (Scene::*m_pSetSpecularColorFunc)(float color);
+	void (Scene::*m_pSetEmissiveColorFunc)(const Color3f &color);
+
+	void SetDiffuseColor_DeferredRender(const Color3f &color);
+	void SetDiffuseColor_NotUsingShader(const Color3f &color);
+	void SetSpecularColor_DeferredRender(float color);
+	void SetSpecularColor_NotUsingShader(float color);
+	void SetEmissiveColor_DeferredRender(const Color3f &color);
+	void SetEmissiveColor_NotUsingShader(const Color3f &color);
+
+	Color3f m_diffuseColor;
+	float m_specularColor;
+	Color3f m_emissiveColor;
+
+	// Asset management - store asset managers in vector, access indirectly through hash map
+	std::unordered_map<std::string, AssetManager*> m_pAssetManagers;
+	
+
+	// Batch rendering - store batch renderers in hash map
+	std::unordered_map<std::string, BatchRenderer*> m_pBatchRenderers;
+
+	bool m_clearingSceneObjects;
+	bool m_clearingSceneEffects;
+	bool m_clearingBatchRenderers;
+
+	// Layer resizing
+	void ResizeOnAdd(unsigned int newLayer);
+	void ResizeOnRemove();
+
+public:
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief layer scene objects are put in if not specified
+	///
+	//////////////////////////////////////////////////////////////////////////
+	unsigned int m_defaultLayer;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief flag that is set in Frame(), but not for internal use. Can be set by user
+	///
+	//////////////////////////////////////////////////////////////////////////
+	bool m_renderingDeferred;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief set true when not using deferred shading to prevent shader switch
+	///
+	//////////////////////////////////////////////////////////////////////////
+	bool m_enableShaderSwitches;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief the spatial partitioning structure
+	///
+	//////////////////////////////////////////////////////////////////////////
+	StaticOctree m_spt;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief pointer to the window
+	///
+	//////////////////////////////////////////////////////////////////////////
+	Window* m_pWin;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief camera in the 3D world
+	///
+	//////////////////////////////////////////////////////////////////////////
+	Camera m_camera;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief input system. Automatically updated by Frame()
+	///
+	//////////////////////////////////////////////////////////////////////////
+	InputHandler m_inputHandler;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief times frames. Contains dt of frame.
+	///
+	//////////////////////////////////////////////////////////////////////////
+	FrameTimer m_frameTimer;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief deferred shading G Buffer
+	///
+	//////////////////////////////////////////////////////////////////////////
+	GBuffer m_gBuffer;
+
+	Scene();
+	~Scene();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief creates the scene
+	///
+	/// Creates the scene. Needs strings to resource file locations. Aborts if they cannot be loaded.
+	/// This function does NOT create the spatial partitioning tree.
+	///
+	/// \param pWin								pointer to the window
+	/// \param gBufferRenderShaderFileName		file name of the plain G Buffer render shader
+	/// \param gBufferRenderBumpShaderFileName	file name of the bump mapping G Buffer render shader
+	/// \param blankWhiteTextureFileName		file name of white 1x1 pixel texture
+	/// \param normalizedCubeFileName			file name of normalized cube .obj model
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Create(Window* pWin,
+		const std::string &gBufferRenderShaderFileName,
+		const std::string &gBufferRenderBumpShaderFileName,
+		const std::string &blankWhiteTextureFileName,
+		const std::string &normalizedCubeFileName);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief initial spatial partitioning tree setup
+	/// 
+	/// \param rootRegion	AABB of the root region
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void TreeSetup(const AABB &rootRegion);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief returns scene creation status
+	///
+	/// \return scene creation status
+	/// 
+	//////////////////////////////////////////////////////////////////////////
+	bool Created();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief returns tree creation status
+	///
+	/// \return tree creation status
+	/// 
+	//////////////////////////////////////////////////////////////////////////
+	bool TreeWasSetup();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief adds a scene object
+	///
+	/// Adds a scene object to m_defaultLayer. It must be heap allocated.
+	/// The Scene will automatically delete it for you.
+	///
+	/// \param object		pointer to the scene object to add
+	/// \param sptManaged	whether or not the scene object should be managed by the spatial partitioning tree
+	/// 
+	//////////////////////////////////////////////////////////////////////////
+	void Add(SceneObject* object, bool sptManaged);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief adds a scene object
+	///
+	/// Adds a scene object to m_defaultLayer. It must be heap allocated.
+	/// The Scene will automatically delete it for you.
+	///
+	/// \param object		pointer to the scene object to add
+	/// \param sptManaged	whether or not the scene object should be managed by the spatial partitioning tree
+	/// \param name			name of the scene object. Optional (using other overload)
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Add(SceneObject* object, bool sptManaged, const std::string &name);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief adds a scene object to specific layer
+	///
+	/// Adds a scene object to specified layer. It must be heap allocated.
+	/// The Scene will automatically delete it for you.
+	///
+	/// \param object		pointer to the scene object to add
+	/// \param sptManaged	whether or not the scene object should be managed by the spatial partitioning tree
+	/// \param layer		layer to add the scene object to (starting at 0)
+	/// 
+	//////////////////////////////////////////////////////////////////////////
+	void Add_Layer(SceneObject* object, bool sptManaged, unsigned int layer);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief adds a scene object to a specific layer
+	///
+	/// Adds a scene object to specified layer. It must be heap allocated.
+	/// The Scene will automatically delete it for you.
+	///
+	/// \param object		pointer to the scene object to add
+	/// \param sptManaged	whether or not the scene object should be managed by the spatial partitioning tree
+	/// \param name			name of the scene object. Optional (using other overload)
+	/// \param layer		layer to add the scene object to (starting at 0)
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Add_Layer(SceneObject* object, bool sptManaged, const std::string &name, unsigned int layer);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief adds a scene effect to a specific layer
+	///
+	/// Adds a scene effect to specified layer. It must be heap allocated.
+	/// The Scene will automatically delete it for you.
+	///
+	/// \param effect		pointer to the scene effect to add
+	/// \param layer		layer to add the scene object to (starting at 0)
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Add(SceneEffect* effect, unsigned int layer);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief adds a scene effect to a specific layer
+	///
+	/// Adds a scene effect to specified layer. It must be heap allocated.
+	/// The Scene will automatically delete it for you.
+	///
+	/// \param effect		pointer to the scene effect to add
+	/// \param layer		layer to add the scene object to (starting at 0)
+	/// \param name			name of the scene effect. Optional (using other overload)
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Add(SceneEffect* effect, unsigned int layer, const std::string &name);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets the number of layers used by the scene objects (highest occupied layer)
+	///
+	/// \return number of layers
+	///
+	//////////////////////////////////////////////////////////////////////////
+	unsigned int GetNumLayers() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets the number of scene objects in a layer
+	///
+	/// \param layer	layer to get number of scene objects from
+	///
+	/// \return number of scene objects in layer
+	///
+	//////////////////////////////////////////////////////////////////////////
+	unsigned int GetNumSceneObjects(unsigned int layer) const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief removes a scene effect by the layer it is on
+	///
+	/// \param layer	layer to remove (there is 1 scene effect per layer)
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void RemoveEffect(unsigned int layer);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief execute game logic (runs all scene object Logic functions)
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Logic();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief renders the scene
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Render();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief renders the scene with occlusion culling
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Render_OcclusionCull();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief renders the scene with the current internal rendering function
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Render_UseSetFunc();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief runs all scene effects
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void RunEffects();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief render scene to a distance
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Render_Distance(float distance);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief set scene to use or not to use occlusion culling
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void SetRenderMode(bool occlusionCull);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief runs a frame of the application
+	///
+	/// Performs input, logic, deferred shading, and scene effects.
+	/// Use this function and no other to run your application.
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Frame();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets the current frustum
+	///
+	/// \return current frustum
+	///
+	//////////////////////////////////////////////////////////////////////////
+	const Frustum &GetFrustum();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief extracts frustum for scene to use from a given matrix
+	///
+	/// \param viewProjection projection*view matrix
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void ExtractFrustum(const Matrix4x4f &viewProjection);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief extracts frustum for scene to use from internal camera matrix
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void ExtractFrustum();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief set the diffuse color for deferred shading
+	///
+	/// Doesn't do anything if not rendering in deferred pass
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void SetDiffuseColor(const Color3f &color);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief set the specular color for deferred shading
+	///
+	/// Doesn't do anything if not rendering in deferred pass
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void SetSpecularColor(float color);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief set the emissive color for deferred shading
+	///
+	/// Doesn't do anything if not rendering in deferred pass
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void SetEmissiveColor(const Color3f &color);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief get the diffuse color for deferred shading
+	///
+	/// \return diffuse color
+	///
+	//////////////////////////////////////////////////////////////////////////
+	const Color3f &GetDiffuseColor() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief get the specular color for deferred shading
+	///
+	/// \return specular color
+	///
+	//////////////////////////////////////////////////////////////////////////
+	float GetSpecularColor() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief get the emissive color for deferred shading
+	///
+	/// \return emissive color
+	///
+	//////////////////////////////////////////////////////////////////////////
+	const Color3f &GetEmissiveColor() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief enables or disables the use of a diffuse texture in deferred shading
+	///
+	/// \param use	whether or not to use texture
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void UseDiffuseTexture(bool use);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief enables or disables the use of a specular texture in deferred shading
+	///
+	/// \param use	whether or not to use texture
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void UseSpecularTexture(bool use);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief enables or disables the use of a emissive texture in deferred shading
+	///
+	/// \param use	whether or not to use texture
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void UseEmissiveTexture(bool use);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets whether or not a diffuse texture is being used in deferred shading
+	///
+	/// \return is using texture
+	///
+	//////////////////////////////////////////////////////////////////////////
+	bool UsingDiffuseTexture() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets whether or not a specular texture is being used in deferred shading
+	///
+	/// \return is using texture
+	///
+	//////////////////////////////////////////////////////////////////////////
+	bool UsingSpecularTexture() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets whether or not an emissive texture is being used in deferred shading
+	///
+	/// \return is using texture
+	///
+	//////////////////////////////////////////////////////////////////////////
+	bool UsingEmissiveTexture() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief sets the current deferred rendering shader
+	///
+	/// Switches G Buffer (deferred) rendering shader. Will not do anything if the shader is already bound.
+	///
+	/// \param gBufferRenderShader	the shader to switch to
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void SetCurrentGBufferRenderShader(GBufferRenderShader gBufferRenderShader);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief sets the current deferred rendering shader, but doesn't check if the shader has already been bound.
+	///
+	/// Switches G Buffer (deferred) rendering shader. Will rebind if the shader is already bound.
+	///
+	/// \param gBufferRenderShader	the shader to switch to
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void SetCurrentGBufferRenderShader_ForceBind(GBufferRenderShader gBufferRenderShader);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets the current deferred rendering shader
+	///
+	/// \return current G Buffer rendering shader
+	///
+	//////////////////////////////////////////////////////////////////////////
+	GBufferRenderShader GetCurrentGBufferRenderShader() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief rebinds the G Buffer render shader set by SetCurrentGBufferRenderShader
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void RebindGBufferRenderShader();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief clears (deletes) all scene objects
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void ClearSceneObjects();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief clears (deletes) all scene effects
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void ClearEffects();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief clears (deletes) all batch renderers
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void ClearBatchRenderers();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief clears (deletes) all asset managers
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void ClearAssetManagers();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief clears (deletes) everything
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void Clear();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief whether or not scene is clearing scene objects
+	///
+	/// \return is clearing scene objects
+	///
+	//////////////////////////////////////////////////////////////////////////
+	bool IsClearing_SceneObjects()
+	{
+		return m_clearingSceneObjects;
+	}
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief whether or not scene is clearing scene effects
+	///
+	/// \return is clearing scene effects
+	///
+	//////////////////////////////////////////////////////////////////////////
+	bool IsClearing_SceneEffects()
+	{
+		return m_clearingSceneEffects;
+	}
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets a pointer to a scene object that was given a name when added to the scene
+	///
+	/// \param name		name of scene object
+	///
+	/// \return pointer to scene object if it exists, NULL otherwise
+	///
+	//////////////////////////////////////////////////////////////////////////
+	SceneObject* GetNamed_SceneObject(const std::string &name);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets a pointer to a scene effect that was given a name when added to the scene
+	///
+	/// \param name		name of scene effect
+	///
+	/// \return pointer to scene effect if it exists, NULL otherwise
+	///
+	//////////////////////////////////////////////////////////////////////////
+	SceneEffect* GetNamed_Effect(const std::string &name);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief sets the current object (world) transformation matrix
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void SetWorldMatrix(const Matrix4x4f &world);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief sets a view matrix not derived from the internal scene camera
+	///
+	/// \param view		view matrix
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void SetCustomViewMatrix(const Matrix4x4f &view);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief calculates the inverse and normal matrices from modelViewProjection matrix
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void CalculateInverseAndNormalMatrix();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief set scene to use deferred rendering functions
+	///
+	/// Sets texture and color functions to change G Buffer render shader parameters
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void SetDeferredRenderFuncs();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief set scene to not use deferred rendering functions
+	///
+	/// Sets texture and color functions to not change G Buffer render shader parameters (doesn't have effect)
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void SetNotUsingShaderFuncs();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief get the current internal view matrix
+	///
+	/// \return view matrix
+	///
+	//////////////////////////////////////////////////////////////////////////
+	const Matrix4x4f &GetViewMatrix();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief get the inverse of the current internal view matrix calculated by CalculateInverseAndNormalMatrix()
+	///
+	/// \return inverse of view matrix
+	///
+	//////////////////////////////////////////////////////////////////////////
+	const Matrix4x4f &GetInverseViewMatrix();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief get the current internal normal matrix calculated by CalculateInverseAndNormalMatrix()
+	///
+	/// \return normal matrix
+	///
+	//////////////////////////////////////////////////////////////////////////
+	const Matrix4x4f &GetNormalMatrix();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief get white 1x1 texture provided to scene in Create(...)
+	///
+	/// \return white 1x1 texture
+	///
+	//////////////////////////////////////////////////////////////////////////
+	const Asset_Texture &GetWhiteTexture() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief get normalized cube .obj model provided to scene in Create(...)
+	///
+	/// \return normalized cube .obj model
+	///
+	//////////////////////////////////////////////////////////////////////////
+	const Model_OBJ_VertexOnly &GetNormalizedCube() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief draws an AABB using the normalized cube .obj model provided in Create(...)
+	///
+	/// \param aabb		AABB to draw
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void DrawAABB(const AABB &aabb);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief static function used for depth sorting scene objects
+	///
+	//////////////////////////////////////////////////////////////////////////
+	static bool DistCompare(OctreeOccupant* first, OctreeOccupant* second);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief adds an asset manager with the given name using the given asset factory
+	///
+	/// \param name				name of the asset manager
+	/// \param assetFactory		pointer to asset factory function for the new asset manager
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void AddAssetManager(const std::string &name, Asset* (*assetFactory)());
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets an asset manager by its name
+	///
+	/// \param name		name of the asset manager
+	///
+	/// \return pointer to the asset manager, NULL if it does not exist
+	///
+	//////////////////////////////////////////////////////////////////////////
+	AssetManager* GetAssetManager(const std::string &name);
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets an asset manager by its name. Creates the asset manager if it does not exist
+	///
+	/// \param name				name of the asset manager
+	/// \param assetFactory		pointer to asset factory function for the new asset manager if it needs to create it
+	///
+	/// \return pointer to the asset manager
+	///
+	//////////////////////////////////////////////////////////////////////////
+	AssetManager* GetAssetManager_AutoCreate(const std::string &name, Asset* (*assetFactory)());
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief clears all data in resource managers
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void ClearAssets();
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief gets a pointer to a batch renderer
+	///
+	/// Given a name, it will return a pointer to that batch renderer.
+	/// If the renderer doesn't exist yet, it will be created with the batch renderer factory.
+	///
+	/// \param batchRendererName		name of the batch renderer to create
+	/// \param batchRendererFactory		batch renderer factory
+	///
+	/// \return pointer to batch renderer
+	///
+	//////////////////////////////////////////////////////////////////////////
+	BatchRenderer* GetBatchRenderer(const std::string &batchRendererName, BatchRenderer* (*batchRendererFactory)());
+
+	//////////////////////////////////////////////////////////////////////////
+	/// \brief executes all batches
+	///
+	//////////////////////////////////////////////////////////////////////////
+	void ExecuteBatches();
+};

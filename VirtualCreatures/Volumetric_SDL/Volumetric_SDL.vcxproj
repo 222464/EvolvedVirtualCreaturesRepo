@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8DFE21E9-831F-43F6-863F-3D1FA77FBC92}</ProjectGuid>
+    <RootNamespace>VirtualCreatures</RootNamespace>
+    <ProjectName>VirtualCreatures</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\Eric\Documents\Visual Studio 2010\Libraries\libogg\include;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\libvorbis-1.3.3\include;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\OpenAL 1.1\include;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\bullet-2.81-rev2613\src;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\Lua\include;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\SDL_image-1.2.12\include;C:\Users\Eric\Documents\Visual Studio 2010\Projects\VirtualCreatures\Volumetric_SDL\Source;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\glew-1.7.0\include;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\SDL-1.2.15\include;C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\libogg\win32\VS2010\Win32\Release;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\libvorbis-1.3.3\win32\VS2010\Win32\Release;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\OpenAL 1.1\libs\Win32;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\bullet-2.81-rev2613\build\lib\lib\Debug;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\Lua\lib;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\SDL_image-1.2.12\lib\x86;C:\Users\Eric\Documents\Visual Studio 2010\Projects\VirtualCreatures\Volumetric_SDL\Source;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\glew-1.7.0\lib;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\SDL-1.2.15\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Users\Eric\Documents\Visual Studio 2010\Libraries\bullet-2.80-rev2531\bullet-2.80-rev2531\Extras\HACD;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\libogg\include;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\libvorbis-1.3.3\include;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\OpenAL 1.1\include;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\bullet-2.81-rev2613\src;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\Lua\include;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\SDL_image-1.2.12\include;C:\Users\Eric\Documents\Visual Studio 2010\Projects\VirtualCreatures\Volumetric_SDL\Source;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\glew-1.7.0\include;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\SDL-1.2.15\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>C:\Users\Eric\Documents\Visual Studio 2010\Libraries\libogg\win32\VS2010\Win32\Release;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\libvorbis-1.3.3\win32\VS2010\Win32\Release;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\OpenAL 1.1\libs\Win32;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\bullet-2.81-rev2613\build\lib\lib\Release;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\Lua\lib;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\SDL_image-1.2.12\lib\x86;C:\Users\Eric\Documents\Visual Studio 2010\Projects\VirtualCreatures\Volumetric_SDL\Source;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\glew-1.7.0\lib;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\SDL-1.2.15\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;SDL_image.lib;glew32.lib;opengl32.lib;glu32.lib;lua5.1.lib;OpenAL32.lib;alut.lib;libogg.lib;libvorbis.lib;libvorbisfile.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>C:\Users\Eric\Documents\Visual Studio 2010\Libraries\OpenAL 1.1\libs\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>RELEASE;_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;SDL_image.lib;glew32.lib;opengl32.lib;glu32.lib;lua5.1.lib;OpenAL32.lib;alut.lib;libogg.lib;libvorbis.lib;libvorbisfile.lib;BulletDynamics.lib;BulletCollision.lib;LinearMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>C:\Users\Eric\Documents\Visual Studio 2010\Libraries\OpenAL 1.1\libs\Win32;C:\Users\Eric\Documents\Visual Studio 2010\Libraries\bullet-2.81-rev2613\build\lib\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="glew32.dll" />
+    <None Include="glew32d.dll" />
+    <None Include="SDL.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Misc\PID_Controller.cpp" />
+    <ClCompile Include="Source\SceneObjects\VirtualCreatures\CreatureEvolver.cpp" />
+    <ClCompile Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor_Feeler.cpp" />
+    <ClCompile Include="Source\SceneObjects\VirtualCreatures\SceneObject_Creature.cpp" />
+    <ClCompile Include="Source\AssetManager\Asset.cpp" />
+    <ClCompile Include="Source\AssetManager\AssetManager.cpp" />
+    <ClCompile Include="Source\AssetManager\Asset_Texture.cpp" />
+    <ClCompile Include="Source\Constructs\AABB.cpp" />
+    <ClCompile Include="Source\Constructs\AABB2D.cpp" />
+    <ClCompile Include="Source\Constructs\BulletConversions.cpp" />
+    <ClCompile Include="Source\Constructs\Color3f.cpp" />
+    <ClCompile Include="Source\Constructs\Color4f.cpp" />
+    <ClCompile Include="Source\Constructs\Matrix3x3f.cpp" />
+    <ClCompile Include="Source\Constructs\Matrix4x4d.cpp" />
+    <ClCompile Include="Source\Constructs\Matrix4x4f.cpp" />
+    <ClCompile Include="Source\Constructs\Planef.cpp" />
+    <ClCompile Include="Source\Constructs\Plane_Equationf.cpp" />
+    <ClCompile Include="Source\Constructs\Point2i.cpp" />
+    <ClCompile Include="Source\Constructs\Point3i.cpp" />
+    <ClCompile Include="Source\Constructs\Point4i.cpp" />
+    <ClCompile Include="Source\Constructs\Quaternion.cpp" />
+    <ClCompile Include="Source\Constructs\Vec2f.cpp" />
+    <ClCompile Include="Source\Constructs\Vec3f.cpp" />
+    <ClCompile Include="Source\Constructs\Vec4d.cpp" />
+    <ClCompile Include="Source\Constructs\Vec4f.cpp" />
+    <ClCompile Include="Source\PathFinding\AStar.cpp" />
+    <ClCompile Include="Source\Renderer\BufferObjects\VAO.cpp" />
+    <ClCompile Include="Source\Renderer\Material.cpp" />
+    <ClCompile Include="Source\Renderer\Model_OBJ_Physics_Static.cpp" />
+    <ClCompile Include="Source\Renderer\Octree\Octree_CHC.cpp" />
+    <ClCompile Include="Source\Renderer\Octree\Octree_CHCPP.cpp" />
+    <ClCompile Include="Source\Renderer\Octree\SoftwareOcclusionCuller.cpp" />
+    <ClCompile Include="Source\SceneEffects\Light_Directional.cpp" />
+    <ClCompile Include="Source\SceneEffects\Light_Directional_Shadowed.cpp" />
+    <ClCompile Include="Source\SceneEffects\SceneEffect_HDRR.cpp" />
+    <ClCompile Include="Source\SceneObjects\SceneObject_SkyBox.cpp" />
+    <ClCompile Include="Source\SceneEffects\Water\SceneEffect_WaterRender.cpp" />
+    <ClCompile Include="Source\SceneEffects\Transparency\SceneEffect_TransparencyRender.cpp" />
+    <ClCompile Include="Source\SceneEffects\Transparency\TransparentRenderable.cpp" />
+    <ClCompile Include="Source\SceneEffects\Water\TestGrouping.cpp" />
+    <ClCompile Include="Source\SceneEffects\Water\WaterGeomGrouping.cpp" />
+    <ClCompile Include="Source\SceneObjects\Enemies\SceneObject_Enemy.cpp" />
+    <ClCompile Include="Source\SceneObjects\Enemies\SceneObject_EnemySelector.cpp" />
+    <ClCompile Include="Source\SceneObjects\Enemies\SceneObject_Enemy_Flea.cpp" />
+    <ClCompile Include="Source\SceneObjects\Enemies\SceneObject_Enemy_Spawner.cpp" />
+    <ClCompile Include="Source\SceneObjects\Enemies\SceneObject_Enemy_Swarmer.cpp" />
+    <ClCompile Include="Source\SceneObjects\Particles\SceneObject_ParticleEmitter_Sprite_Pyramid.cpp" />
+    <ClCompile Include="Source\SceneObjects\Physics\DynamicCharacterController.cpp" />
+    <ClCompile Include="Source\SceneObjects\Physics\DynamicConcaveShape.cpp" />
+    <ClCompile Include="Source\SceneObjects\Physics\SceneObject_Prop_Physics_Dynamic.cpp" />
+    <ClCompile Include="Source\SceneObjects\Physics\SceneObject_Prop_Physics_Static.cpp" />
+    <ClCompile Include="Source\SceneObjects\SceneObject_Decal.cpp" />
+    <ClCompile Include="Source\SceneEffects\SceneEffect_HUD.cpp" />
+    <ClCompile Include="Source\SceneObjects\SceneObject_LevelGoal.cpp" />
+    <ClCompile Include="Source\SceneObjects\SceneObject_Prop_Transparent.cpp" />
+    <ClCompile Include="Source\SceneObjects\SceneObject_Water.cpp" />
+    <ClCompile Include="Source\SceneObjects\VirtualCreatures\Limb.cpp" />
+    <ClCompile Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron.cpp" />
+    <ClCompile Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\NeuronInput.cpp" />
+    <ClCompile Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor_Contact.cpp" />
+    <ClCompile Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor_Timer.cpp" />
+    <ClCompile Include="Source\SceneObjects\VirtualCreatures\SceneObject_VirtualCreatureSimulator.cpp" />
+    <ClCompile Include="Source\SceneObjects\Weapons\WeaponOutput.cpp" />
+    <ClCompile Include="Source\SceneObjects\Weapons\WeaponOutput_Ballistic.cpp" />
+    <ClCompile Include="Source\System\CSDLThread.cpp" />
+    <ClCompile Include="Source\System\CSDLThreadPool.cpp" />
+    <ClCompile Include="Source\World\Main.cpp" />
+    <ClCompile Include="Source\Misc\FrameTimer.cpp" />
+    <ClCompile Include="Source\Misc\InputHandler.cpp" />
+    <ClCompile Include="Source\Perlin\NoiseGenerator.cpp" />
+    <ClCompile Include="Source\Renderer\Animation_MD5\FrameData.cpp" />
+    <ClCompile Include="Source\Renderer\Animation_MD5\SkeletalJoint.cpp" />
+    <ClCompile Include="Source\Renderer\BufferObjects\FBO.cpp" />
+    <ClCompile Include="Source\Renderer\BufferObjects\VBO.cpp" />
+    <ClCompile Include="Source\Renderer\Camera.cpp" />
+    <ClCompile Include="Source\Renderer\Culler\Frustum.cpp" />
+    <ClCompile Include="Source\Renderer\GBuffer.cpp" />
+    <ClCompile Include="Source\Renderer\Animation_MD5\Animation_MD5.cpp" />
+    <ClCompile Include="Source\Renderer\Animation_MD5\BaseFrame.cpp" />
+    <ClCompile Include="Source\Renderer\Model_MD5\Joint.cpp" />
+    <ClCompile Include="Source\Renderer\Animation_MD5\JointDesc.cpp" />
+    <ClCompile Include="Source\Renderer\Model_MD5\Mesh.cpp" />
+    <ClCompile Include="Source\Renderer\Model_MD5\Model_MD5.cpp" />
+    <ClCompile Include="Source\Renderer\Model_MD5\Vertex.cpp" />
+    <ClCompile Include="Source\Renderer\Model_MD5\Weight.cpp" />
+    <ClCompile Include="Source\Renderer\Model_OBJ.cpp" />
+    <ClCompile Include="Source\Renderer\Model_OBJ_VertexOnly.cpp" />
+    <ClCompile Include="Source\Renderer\Octree\Octree.cpp" />
+    <ClCompile Include="Source\Renderer\Octree\OctreeNode.cpp" />
+    <ClCompile Include="Source\Renderer\Octree\OctreeOccupant.cpp" />
+    <ClCompile Include="Source\Renderer\Octree\StaticOctree.cpp" />
+    <ClCompile Include="Source\Renderer\Quadtree\Quadtree.cpp" />
+    <ClCompile Include="Source\Renderer\Quadtree\QuadtreeNode.cpp" />
+    <ClCompile Include="Source\Renderer\Quadtree\QuadtreeOccupant.cpp" />
+    <ClCompile Include="Source\Renderer\Quadtree\StaticQuadtree.cpp" />
+    <ClCompile Include="Source\Renderer\RenderUtils.cpp" />
+    <ClCompile Include="Source\Renderer\SDL_OpenGL.cpp" />
+    <ClCompile Include="Source\Renderer\Shader\Shader.cpp" />
+    <ClCompile Include="Source\Renderer\Shader\TextureAndAttachment.cpp" />
+    <ClCompile Include="Source\Renderer\Shader\UBOShaderInterface.cpp" />
+    <ClCompile Include="Source\Renderer\ShadowMap\ShadowCubeMap.cpp" />
+    <ClCompile Include="Source\Renderer\Sprite.cpp" />
+    <ClCompile Include="Source\Renderer\Window.cpp" />
+    <ClCompile Include="Source\SceneEffects\Light.cpp" />
+    <ClCompile Include="Source\SceneEffects\Light_Point.cpp" />
+    <ClCompile Include="Source\SceneEffects\Light_Point_Shadowed.cpp" />
+    <ClCompile Include="Source\SceneEffects\Light_Spot.cpp" />
+    <ClCompile Include="Source\SceneEffects\Light_Spot_Shadowed.cpp" />
+    <ClCompile Include="Source\SceneEffects\SceneEffect_EdgeBlurAA.cpp" />
+    <ClCompile Include="Source\SceneEffects\SceneEffect_EmissiveRender.cpp" />
+    <ClCompile Include="Source\SceneEffects\SceneEffect_GodRay.cpp" />
+    <ClCompile Include="Source\SceneEffects\SceneEffect_Lighting.cpp" />
+    <ClCompile Include="Source\SceneEffects\SceneEffect_SSAO.cpp" />
+    <ClCompile Include="Source\SceneObjects\Particles\SceneObject_ParticleEmitter_Sprite.cpp" />
+    <ClCompile Include="Source\SceneObjects\Particles\Particle_Sprite.cpp" />
+    <ClCompile Include="Source\SceneObjects\Particles\SceneObject_ParticleEmitter_Sprite_Point.cpp" />
+    <ClCompile Include="Source\SceneObjects\Physics\SceneObject_PhysicsBox.cpp" />
+    <ClCompile Include="Source\SceneObjects\Physics\SceneObject_PhysicsWorld.cpp" />
+    <ClCompile Include="Source\SceneObjects\SceneObject_Door.cpp" />
+    <ClCompile Include="Source\SceneObjects\SceneObject_Player.cpp" />
+    <ClCompile Include="Source\SceneObjects\SceneObject_Prop.cpp" />
+    <ClCompile Include="Source\SceneObjects\SceneObject_Sound.cpp" />
+    <ClCompile Include="Source\SceneObjects\SceneObject_SpiralStairs.cpp" />
+    <ClCompile Include="Source\SceneObjects\Weapons\SceneObject_Shell.cpp" />
+    <ClCompile Include="Source\SceneObjects\Weapons\SceneObject_Weapon.cpp" />
+    <ClCompile Include="Source\SceneObjects\Weapons\Weapon.cpp" />
+    <ClCompile Include="Source\SceneObjects\Weapons\WeaponAssetPack.cpp" />
+    <ClCompile Include="Source\SceneObjects\Weapons\WeaponFactory.cpp" />
+    <ClCompile Include="Source\SceneObjects\Weapons\Wire.cpp" />
+    <ClCompile Include="Source\Scene\Scene.cpp" />
+    <ClCompile Include="Source\Scene\SceneEffect.cpp" />
+    <ClCompile Include="Source\Scene\SceneObject.cpp" />
+    <ClCompile Include="Source\Sound\OpenALUtils.cpp" />
+    <ClCompile Include="Source\Sound\SoundSource.cpp" />
+    <ClCompile Include="Source\Sound\SoundSystem.cpp" />
+    <ClCompile Include="Source\Sound\Sound_Effect.cpp" />
+    <ClCompile Include="Source\Sound\Sound_Streamed.cpp" />
+    <ClCompile Include="Source\Utilities\UtilFuncs.cpp" />
+    <ClCompile Include="Source\World\Chunk.cpp" />
+    <ClCompile Include="Source\World\LuaWorldInterface.cpp" />
+    <ClCompile Include="Source\World\Physics\MapCollider.cpp" />
+    <ClCompile Include="Source\World\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Misc\PID_Controller.h" />
+    <ClInclude Include="Source\SceneObjects\VirtualCreatures\CreatureEvolver.h" />
+    <ClInclude Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor.h" />
+    <ClInclude Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor_Feeler.h" />
+    <ClInclude Include="Source\SceneObjects\VirtualCreatures\SceneObject_Creature.h" />
+    <ClInclude Include="Source\AssetManager\Asset.h" />
+    <ClInclude Include="Source\AssetManager\AssetManager.h" />
+    <ClInclude Include="Source\AssetManager\Asset_Texture.h" />
+    <ClInclude Include="Source\Constructs\AABB.h" />
+    <ClInclude Include="Source\Constructs\AABB2D.h" />
+    <ClInclude Include="Source\Constructs\BulletConversions.h" />
+    <ClInclude Include="Source\Constructs\Color3f.h" />
+    <ClInclude Include="Source\Constructs\Color4f.h" />
+    <ClInclude Include="Source\Constructs\Matrix3x3f.h" />
+    <ClInclude Include="Source\Constructs\Matrix4x4d.h" />
+    <ClInclude Include="Source\Constructs\Matrix4x4f.h" />
+    <ClInclude Include="Source\Constructs\Planef.h" />
+    <ClInclude Include="Source\Constructs\Plane_Equationf.h" />
+    <ClInclude Include="Source\Constructs\Point2i.h" />
+    <ClInclude Include="Source\Constructs\Point3i.h" />
+    <ClInclude Include="Source\Constructs\Point4i.h" />
+    <ClInclude Include="Source\Constructs\Quaternion.h" />
+    <ClInclude Include="Source\Constructs\Vec2f.h" />
+    <ClInclude Include="Source\Constructs\Vec3f.h" />
+    <ClInclude Include="Source\Constructs\Vec4d.h" />
+    <ClInclude Include="Source\Constructs\Vec4f.h" />
+    <ClInclude Include="Source\Misc\FrameTimer.h" />
+    <ClInclude Include="Source\Misc\InputHandler.h" />
+    <ClInclude Include="Source\PathFinding\AStar.h" />
+    <ClInclude Include="Source\PathFinding\MinHeap.h" />
+    <ClInclude Include="Source\Perlin\NoiseGenerator.h" />
+    <ClInclude Include="Source\Renderer\Animation_MD5\FrameData.h" />
+    <ClInclude Include="Source\Renderer\Animation_MD5\SkeletalJoint.h" />
+    <ClInclude Include="Source\Renderer\BufferObjects\FBO.h" />
+    <ClInclude Include="Source\Renderer\BufferObjects\VAO.h" />
+    <ClInclude Include="Source\Renderer\BufferObjects\VBO.h" />
+    <ClInclude Include="Source\Renderer\Camera.h" />
+    <ClInclude Include="Source\Renderer\Culler\Frustum.h" />
+    <ClInclude Include="Source\Renderer\GBuffer.h" />
+    <ClInclude Include="Source\Renderer\Animation_MD5\Animation_MD5.h" />
+    <ClInclude Include="Source\Renderer\Animation_MD5\BaseFrame.h" />
+    <ClInclude Include="Source\Renderer\Material.h" />
+    <ClInclude Include="Source\Renderer\Model_MD5\Joint.h" />
+    <ClInclude Include="Source\Renderer\Animation_MD5\JointDesc.h" />
+    <ClInclude Include="Source\Renderer\Model_MD5\Mesh.h" />
+    <ClInclude Include="Source\Renderer\Model_MD5\Model_MD5.h" />
+    <ClInclude Include="Source\Renderer\Model_MD5\Vertex.h" />
+    <ClInclude Include="Source\Renderer\Model_MD5\Weight.h" />
+    <ClInclude Include="Source\Renderer\Model_OBJ.h" />
+    <ClInclude Include="Source\Renderer\Model_OBJ_Physics_Static.h" />
+    <ClInclude Include="Source\Renderer\Model_OBJ_VertexOnly.h" />
+    <ClInclude Include="Source\Renderer\Octree.h" />
+    <ClInclude Include="Source\Renderer\Octree\Occlusion_Renderer.h" />
+    <ClInclude Include="Source\Renderer\Octree\Octree.h" />
+    <ClInclude Include="Source\Renderer\Octree\OctreeNode.h" />
+    <ClInclude Include="Source\Renderer\Octree\OctreeOccupant.h" />
+    <ClInclude Include="Source\Renderer\Octree\Octree_CHC.h" />
+    <ClInclude Include="Source\Renderer\Octree\Octree_CHCPP.h" />
+    <ClInclude Include="Source\Renderer\Octree\SoftwareOcclusionCuller.h" />
+    <ClInclude Include="Source\Renderer\Octree\StaticOctree.h" />
+    <ClInclude Include="Source\Renderer\Quadtree\Quadtree.h" />
+    <ClInclude Include="Source\Renderer\Quadtree\QuadtreeNode.h" />
+    <ClInclude Include="Source\Renderer\Quadtree\QuadtreeOccupant.h" />
+    <ClInclude Include="Source\Renderer\Quadtree\StaticQuadtree.h" />
+    <ClInclude Include="Source\Renderer\RenderUtils.h" />
+    <ClInclude Include="Source\Renderer\SDL_OpenGL.h" />
+    <ClInclude Include="Source\Renderer\Shader\Shader.h" />
+    <ClInclude Include="Source\Renderer\Shader\TextureAndAttachment.h" />
+    <ClInclude Include="Source\Renderer\Shader\UBOShaderInterface.h" />
+    <ClInclude Include="Source\Renderer\ShadowMap\ShadowCubeMap.h" />
+    <ClInclude Include="Source\Renderer\Sprite.h" />
+    <ClInclude Include="Source\Renderer\Window.h" />
+    <ClInclude Include="Source\SceneEffects\Light.h" />
+    <ClInclude Include="Source\SceneEffects\Light_Directional.h" />
+    <ClInclude Include="Source\SceneEffects\Light_Directional_Shadowed.h" />
+    <ClInclude Include="Source\SceneEffects\Light_Point.h" />
+    <ClInclude Include="Source\SceneEffects\Light_Point_Shadowed.h" />
+    <ClInclude Include="Source\SceneEffects\Light_Spot.h" />
+    <ClInclude Include="Source\SceneEffects\Light_Spot_Shadowed.h" />
+    <ClInclude Include="Source\SceneEffects\SceneEffect_EdgeBlurAA.h" />
+    <ClInclude Include="Source\SceneEffects\SceneEffect_EmissiveRender.h" />
+    <ClInclude Include="Source\SceneEffects\SceneEffect_GodRay.h" />
+    <ClInclude Include="Source\SceneEffects\SceneEffect_HDRR.h" />
+    <ClInclude Include="Source\SceneEffects\SceneEffect_Lighting.h" />
+    <ClInclude Include="Source\SceneObjects\SceneObject_SkyBox.h" />
+    <ClInclude Include="Source\SceneEffects\SceneEffect_SSAO.h" />
+    <ClInclude Include="Source\SceneEffects\Water\SceneEffect_WaterRender.h" />
+    <ClInclude Include="Source\SceneEffects\Transparency\SceneEffect_TransparencyRender.h" />
+    <ClInclude Include="Source\SceneEffects\Transparency\TransparentRenderable.h" />
+    <ClInclude Include="Source\SceneEffects\Water\TestGrouping.h" />
+    <ClInclude Include="Source\SceneEffects\Water\WaterGeomGrouping.h" />
+    <ClInclude Include="Source\SceneObjects\Enemies\SceneObject_Enemy.h" />
+    <ClInclude Include="Source\SceneObjects\Enemies\SceneObject_EnemySelector.h" />
+    <ClInclude Include="Source\SceneObjects\Enemies\SceneObject_Enemy_Flea.h" />
+    <ClInclude Include="Source\SceneObjects\Enemies\SceneObject_Enemy_Spawner.h" />
+    <ClInclude Include="Source\SceneObjects\Enemies\SceneObject_Enemy_Swarmer.h" />
+    <ClInclude Include="Source\SceneObjects\Particles\SceneObject_ParticleEmitter_Sprite.h" />
+    <ClInclude Include="Source\SceneObjects\Particles\Particle_Sprite.h" />
+    <ClInclude Include="Source\SceneObjects\Particles\SceneObject_ParticleEmitter_Sprite_Point.h" />
+    <ClInclude Include="Source\SceneObjects\Particles\SceneObject_ParticleEmitter_Sprite_Pyramid.h" />
+    <ClInclude Include="Source\SceneObjects\Physics\DynamicCharacterController.h" />
+    <ClInclude Include="Source\SceneObjects\Physics\DynamicConcaveShape.h" />
+    <ClInclude Include="Source\SceneObjects\Physics\SceneObject_PhysicsBox.h" />
+    <ClInclude Include="Source\SceneObjects\Physics\SceneObject_PhysicsWorld.h" />
+    <ClInclude Include="Source\SceneObjects\Physics\SceneObject_Prop_Physics_Dynamic.h" />
+    <ClInclude Include="Source\SceneObjects\Physics\SceneObject_Prop_Physics_Static.h" />
+    <ClInclude Include="Source\SceneObjects\SceneObject_Decal.h" />
+    <ClInclude Include="Source\SceneObjects\SceneObject_Door.h" />
+    <ClInclude Include="Source\SceneEffects\SceneEffect_HUD.h" />
+    <ClInclude Include="Source\SceneObjects\SceneObject_LevelGoal.h" />
+    <ClInclude Include="Source\SceneObjects\SceneObject_Player.h" />
+    <ClInclude Include="Source\SceneObjects\SceneObject_Prop.h" />
+    <ClInclude Include="Source\SceneObjects\SceneObject_Prop_Transparent.h" />
+    <ClInclude Include="Source\SceneObjects\SceneObject_Sound.h" />
+    <ClInclude Include="Source\SceneObjects\SceneObject_SpiralStairs.h" />
+    <ClInclude Include="Source\SceneObjects\SceneObject_Water.h" />
+    <ClInclude Include="Source\SceneObjects\VirtualCreatures\Limb.h" />
+    <ClInclude Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron.h" />
+    <ClInclude Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\NeuronInput.h" />
+    <ClInclude Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor_Contact.h" />
+    <ClInclude Include="Source\SceneObjects\VirtualCreatures\NeuralNet\Neuron\Neuron_Sensor_Timer.h" />
+    <ClInclude Include="Source\SceneObjects\VirtualCreatures\SceneObject_VirtualCreatureSimulator.h" />
+    <ClInclude Include="Source\SceneObjects\Weapons\SceneObject_Shell.h" />
+    <ClInclude Include="Source\SceneObjects\Weapons\SceneObject_Weapon.h" />
+    <ClInclude Include="Source\SceneObjects\Weapons\Weapon.h" />
+    <ClInclude Include="Source\SceneObjects\Weapons\WeaponAssetPack.h" />
+    <ClInclude Include="Source\SceneObjects\Weapons\WeaponFactory.h" />
+    <ClInclude Include="Source\SceneObjects\Weapons\WeaponOutput.h" />
+    <ClInclude Include="Source\SceneObjects\Weapons\WeaponOutput_Ballistic.h" />
+    <ClInclude Include="Source\SceneObjects\Weapons\Wire.h" />
+    <ClInclude Include="Source\Scene\BatchRenderable.h" />
+    <ClInclude Include="Source\Scene\BatchRenderer.h" />
+    <ClInclude Include="Source\Scene\Scene.h" />
+    <ClInclude Include="Source\Scene\SceneEffect.h" />
+    <ClInclude Include="Source\Scene\SceneObject.h" />
+    <ClInclude Include="Source\Sound\OpenALUtils.h" />
+    <ClInclude Include="Source\Sound\Sound.h" />
+    <ClInclude Include="Source\Sound\SoundSource.h" />
+    <ClInclude Include="Source\Sound\SoundSystem.h" />
+    <ClInclude Include="Source\Sound\Sound_Effect.h" />
+    <ClInclude Include="Source\Sound\Sound_Streamed.h" />
+    <ClInclude Include="Source\System\CSDLThread.h" />
+    <ClInclude Include="Source\System\CSDLThreadPool.h" />
+    <ClInclude Include="Source\System\Uncopyable.h" />
+    <ClInclude Include="Source\Utilities\UtilFuncs.h" />
+    <ClInclude Include="Source\World\Chunk.h" />
+    <ClInclude Include="Source\World\LuaWorldInterface.h" />
+    <ClInclude Include="Source\World\Physics\MapCollider.h" />
+    <ClInclude Include="Source\World\World.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

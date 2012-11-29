@@ -1,0 +1,101 @@
+populationSize 12
+crossoverRate 0.2
+
+contactSensorMutationRate 0.05
+initContactSensorChance 0.01
+
+neuralStructureMutationRate_numLayers 0.02
+neuralStructureMutationRate_numNeuronsPerHiddenLayer 0.05
+minHiddenLayers 1
+maxHiddenLayers 2
+minNeuronsPerHiddenLayer 12
+maxNeuronsPerHiddenLayer 22
+maxNeuronsPerHiddenLayerPerturbation 2
+mainBrainInputNeuronsMutationRate 0.05
+maxNumMainBrainInputNeurons 4
+mainBrainOutputsMutationRate 0.05
+minMainBrainOutputs 6
+maxMainBrainOutputs 10
+parentLimbInputNeuronsMutationRate 0.05
+maxNumParentLimbInputNeurons 4
+childLimbInputNeuronsMutationRate 0.05
+maxNumChildLimbInputNeurons 4
+neuralWeightMutationRate 0.1
+neuralWeightPerturbation 4
+minPossibleNeuronWeight -20
+maxPossibleNeuronWeight 40
+
+minInitTimerCount 0
+maxInitTimerCount 6
+minInitTimerRate 0.01
+maxInitTimerRate 0.6
+minTimerCount 0
+maxTimerCount 6
+minTimerRate 0.01
+maxTimerRate 0.1
+timerCountMutationRate 0.05
+timerRateMutationRate 0.02
+timerTimeMutationRate 0.1
+minPossibleTimerRate 0.005
+maxPossibleTimerRate 0.6
+maxTimerRatePerturbation 0.05
+maxTimerTimePerturbation 0.05
+
+densityMutationRate 0.1
+maxDensityPerturbation 0.05
+minDensity 0.6
+maxDensity 3.1
+frictionMutationRate 0.1
+maxFrictionPerturbation 0.5
+minFriction 0.6
+maxFriction 5.0
+
+dimensionalMutationRate 0.1
+maxLimbDimensionPerturbation 0.5
+minLimbDimension 0.05
+maxLimbDimension 1.1
+
+relativeOffsetRatioMutationRate 0.1
+maxRelativeOffsetRatioPerturbation 0.1
+
+limbBendAndTwistMutationRate 0.1
+maxLimbBendAndTwistPerturbation 0.8
+minLimbTwist 0.1
+minLimbBend 0.1
+maxLimbTwist 1.8
+maxLimbBend 1.8
+
+limbAngleMutationRate 0.1
+maxLimbAnglePerturbation 0.1
+maxLimbAngle 1.8
+
+limbStrengthMutationRate 0.1
+maxLimbStrengthPerturbation 200.0
+minLimbStrength 1000.0
+maxLimbStrength 2000.0
+
+limbCountMutationRate 0.02
+maxLimbPerturbation 1
+minNumLimbs 2
+maxNumLimbs 6
+
+limbParentMutationRate 0.1
+
+recursiveLimbMutationRate_whenRecursive 0.03
+recursiveLimbMutationRate_whenNotRecursive 0.05
+symmetricalLimbMutationRate_whenSymmetrical 0.03
+symmetricalLimbMutationRate_whenNotSymmetrical 0.05
+recursiveLimbUnitCountChangeRate 0.05
+initRecursiveLimbChance 0.1
+initSymetricalLimbChance 0.2
+inheritRecursionMutationRate 0.05
+inheritSymmetryMutationRate 0.05
+initInheritRecursionChance 0.3
+initInheritSymmetryChance 0.3
+minInitRecursiveUnits 1
+maxInitRecursiveUnits 3
+maxRecursiveUnits 4
+numBranchesMutationRate 0.1
+maxNumBranches 4
+
+numElites 5

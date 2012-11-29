@@ -1,0 +1,24 @@
+# Blender MTL File: 'elevator1_dupe.blend'
+# Material Count: 2
+newmtl Material.002_elevator1_Texture.png
+Ns 96.078431
+Ka 1.000000 1.000000 0.800000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/elevator1_diffuse.png
+
+newmtl Material_elevator1_Texture.png
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd data/models/elevator1_diffuse.png
+map_Bump data/models/elevator1_normal.bmp
+
+

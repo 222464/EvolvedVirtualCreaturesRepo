@@ -1,0 +1,5 @@
+Created world with chunk dimensions 18, 6, 18
+using the diffuse texture data/textures/voxelTexture_lowRes.png and the specular texture data/textures/voxelTexture_lowRes_specular.png which contain a 2 x 4 matrix of textures, following descriptor data/textures/descriptor.txt
+Lua done. Generating chunks...
+Chunk generation complete.
+Could not find trigger position. Using default position
